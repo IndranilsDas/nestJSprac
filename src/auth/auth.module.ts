@@ -8,7 +8,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 
 @Module({
-  imports:[ConfigModule.forRoot(),MongooseModule.forRoot(`${process.env.DB_URL}`),UsersModule],
+  
+  imports:[ConfigModule.forRoot(),UsersModule],
   providers: [AuthService],
   controllers: [AuthController]
 })
