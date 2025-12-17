@@ -16,9 +16,6 @@ export class User {
   @Prop({required:true})
   name: string;
 
-  @Prop()
-  age: number;
-
   @Prop({required:true,unique:true})
   email: string;
 

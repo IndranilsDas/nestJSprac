@@ -7,8 +7,18 @@ import { Model } from 'mongoose';
 export class UsersService {
     constructor(@InjectModel(User.name) private userModel:Model<User>){}
 
-    createUser(){
-        return {message:'user created'}
+    async createUser(data:{name:string;
+        email:string;
+        password:string;
+        role:string})
+    
+    {
+        const user = new this.userModel(data)
+        return user.save()
+    }
+    async getUser(id:string){
+        const user = this.userModel.findById(id)
+        return user
     }
 }
 

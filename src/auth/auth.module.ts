@@ -8,8 +8,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 
 @Module({
-  
-  imports:[ConfigModule.forRoot(),UsersModule],
+
+  imports:[UsersModule],
   providers: [AuthService],
   controllers: [AuthController]
 })

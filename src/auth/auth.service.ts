@@ -7,9 +7,16 @@ import { Model } from 'mongoose';
 export class AuthService {
     constructor( private readonly usersService:UsersService){}
 
-    registerUser(){
-        const result = this.usersService.createUser()
+    registerUser(data:{name:string;
+        email:string;
+        password:string;
+        role:string}){
+        const result = this.usersService.createUser(data)
         return result
-
+    
 }
+    async getUserDatabyID(id:string){
+        const user = this.usersService.getUser(id)
+        return user
+    }
 }
